@@ -13,13 +13,13 @@ const SelectAddress = () => {
 
 
 
-    const userEmail = 'rssujaykiran@gmail.com';
+    const userEmail = 'atchaytweet@gmail.com';
 
 
     useEffect(() => {
         const fetchAddresses = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/v2/user/addresses', {
+                const response = await axios.get('http://localhost:3000/api/v2/user/addresses', {
                     params: { email: userEmail },
                 });
 

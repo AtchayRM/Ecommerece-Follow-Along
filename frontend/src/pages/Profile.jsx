@@ -6,9 +6,9 @@ import {useNavigate } from "react-router-dom";
 
 export default function Profile() {
     const [personalDetails, setPersonalDetails] = useState({
-        name: "",
-        email: "",
-        phoneNumber: "",
+        name: "Atchay",
+        email: "atchaytweet@gmail.com",
+        phoneNumber: "xxxxxx1581",
         avatarUrl: "",
     });
 
@@ -18,7 +18,7 @@ export default function Profile() {
 
     useEffect(() => {
         fetch(
-            `http://localhost:8000/api/v2/user/profile?email=${"rssujaykiran@gmail.com"}`,
+            `http://localhost:3000/api/v2/user/profile?email=${"atchaytweet@gmail.com"}`,
             {
                 method: "GET",
                 headers: {
@@ -59,7 +59,7 @@ export default function Profile() {
                                     PICTURE
                                 </div>
                                 <img
-                                    src={`http://localhost:8000/${personalDetails.avatarUrl}` || `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`}
+                                    src={`http://localhost:3000/${personalDetails.avatarUrl}` || `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`}
                                     alt="profile"
                                     className="w-40 h-40 rounded-full"
                                     onError={(e) => {

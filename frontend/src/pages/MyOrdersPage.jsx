@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar'
 
 const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
-    const defaultEmail = 'rssujaykiran@gmail.com';
+    const defaultEmail = 'atchaytweet@gmail.com';
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -12,7 +12,7 @@ const MyOrdersPage = () => {
         try {
             setLoading(true);
             setError('');
-            const response = await axios.get('http://localhost:8000/api/v2/orders/myorders', {
+            const response = await axios.get('http://localhost:3000/api/v2/orders/myorders', {
                 params: { email: defaultEmail },
             });
             setOrders(response.data.orders);
@@ -27,7 +27,7 @@ const MyOrdersPage = () => {
     const cancelOrder = async (orderId) => {
         
         try {
-            const response = await axios.patch(`http://localhost:8000/api/v2/orders/cancel-order/${orderId}`);
+            const response = await axios.patch(`http://localhost:3000/api/v2/orders/cancel-order/${orderId}`);
             // Update the order in local state: either remove or update its status.
             setOrders((prevOrders) =>
                 prevOrders.map((order) =>

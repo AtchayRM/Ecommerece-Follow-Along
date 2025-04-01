@@ -32,6 +32,8 @@ const orderRoutes = require("./controller/order")
 app.use("/api/v2/user", userRoutes);
 app.use("/api/v2/product", productRoutes);
 app.use("/api/v2/orders", orderRoutes)
+app.use("/api/products", productRoutes);
+
 
 // Error Handling Middleware
 app.use(ErrorHandler);
