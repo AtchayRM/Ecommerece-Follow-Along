@@ -276,3 +276,8 @@ Key feautures : Please create an PayPal account first PayPal developer dashboard
 # Milestone 30 : PayPal Payment Integration
 
 In this milestone, you will integrate PayPal payments into a React application. This involves setting up the PayPal API, configuring the payment provider, building a payment component, and testing transactions in the PayPal sandbox. 
+
+
+# Milestone 31: Redux Global State Management
+
+In this milestone, you will implement global state management in a React application using Redux. You will set up a Redux store, create actions to manage user email state, and wrap the app with a provider for state access across components
