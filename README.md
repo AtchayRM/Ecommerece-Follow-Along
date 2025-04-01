@@ -275,4 +275,4 @@ Key feautures : Please create an PayPal account first PayPal developer dashboard
 
 # Milestone 30 : PayPal Payment Integration
 
-In this milestone, you will integrate PayPal payments into a React application. This involves setting up the PayPal API, configuring the payment provider, building a payment component, and testing transactions in the PayPal sandbox. Once implemented, upload your code to GitHub and submit your assignment.
+In this milestone, you will integrate PayPal payments into a React application. This involves setting up the PayPal API, configuring the payment provider, building a payment component, and testing transactions in the PayPal sandbox. 
