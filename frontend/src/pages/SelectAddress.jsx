@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from '../components/NavBar';
 import { useNavigate } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 
 const SelectAddress = () => {
     const [addresses, setAddresses] = useState([]);
@@ -10,13 +10,11 @@ const SelectAddress = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-
-
-
-    const userEmail = 'atchaytweet@gmail.com';
-
+    const userEmail = useSelector((state) => state.user.email);
 
     useEffect(() => {
+        if(!userEmail)
+            return;
         const fetchAddresses = async () => {
             try {
                 const response = await axios.get('http://localhost:3000/api/v2/user/addresses', {

@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import NavBar from '../components/NavBar'
+import { useSelector } from 'react-redux';
 
 const MyOrdersPage = () => {
     const [orders, setOrders] = useState([]);
-    const defaultEmail = 'atchaytweet@gmail.com';
+    const email = useSelector((state) => state.user.email)
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const fetchOrders = async () => {
+    const fetchOrders = useCallback( async () => {
+        if (!email) return;
         try {
             setLoading(true);
             setError('');
@@ -21,7 +23,7 @@ const MyOrdersPage = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [email]);
 
     // Cancel order handler
     const cancelOrder = async (orderId) => {
@@ -43,7 +45,7 @@ const MyOrdersPage = () => {
 
     useEffect(() => {
         fetchOrders();
-    }, []);
+    }, [fetchOrders]);
 
     return (
         <>

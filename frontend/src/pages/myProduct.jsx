@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MyProduct from "../components/MyProduct";
 import NavBar from "../components/NavBar";
+import { useSelector } from "react-redux";
 
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
@@ -10,6 +11,7 @@ export default function MyProducts() {
 
 
     useEffect(() => {
+        if (!email) return;
         fetch(`http://localhost:3000/api/v2/product/my-products?email=${email}`)
             .then((res) => {
                 if (!res.ok) {
